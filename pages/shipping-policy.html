@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shipping & Delivery Policy | Lyftag Elite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        --card-glass: rgba(30, 41, 59, 0.7);
+        --accent-gold: #fbbf24;
+        --text-primary: #f8fafc;
+        --text-dim: #94a3b8;
+        --border: rgba(255, 255, 255, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: var(--bg-gradient);
+        background-attachment: fixed;
+        color: var(--text-primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 40px 20px;
+        line-height: 1.6;
+      }
+
+      .shipping-container {
+        max-width: 700px;
+        width: 100%;
+        background: var(--card-glass);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 50px;
+        border-radius: 24px;
+        border: 1px solid var(--border);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      h1 {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        background: linear-gradient(to right, #fff, var(--accent-gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+      }
+
+      .update-tag {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: var(--text-dim);
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .highlight-box {
+        background: rgba(251, 191, 36, 0.1);
+        border: 1px solid var(--accent-gold);
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 35px;
+        text-align: center;
+      }
+
+      .highlight-box p {
+        color: var(--accent-gold);
+        font-weight: 600;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 18px;
+        color: var(--accent-gold);
+        margin: 30px 0 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      p,
+      ul {
+        color: var(--text-dim);
+        margin-bottom: 15px;
+        font-size: 15px;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 5px;
+      }
+      ul li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      ul li::before {
+        content: "•";
+        color: var(--accent-gold);
+        font-size: 20px;
+      }
+
+      .timeline-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .timeline-card {
+        background: rgba(15, 23, 42, 0.4);
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+      }
+
+      .timeline-card strong {
+        color: white;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .footer-contact {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid var(--border);
+        text-align: center;
+      }
+
+      .footer-contact a {
+        color: var(--accent-gold);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .back-btn {
+        display: inline-block;
+        margin-top: 25px;
+        color: var(--text-dim);
+        text-decoration: none;
+        font-size: 13px;
+        border-bottom: 1px solid transparent;
+      }
+
+      .back-btn:hover {
+        border-color: var(--text-dim);
+      }
+
+      @media (max-width: 600px) {
+        .shipping-container {
+          padding: 30px 20px;
+        }
+        .timeline-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shipping-container">
+      <h1>Shipping & Delivery</h1>
+      <span class="update-tag">Digital Service Policy • 2026</span>
+
+      <div class="highlight-box">
+        <p>
+          Lyftag is a digital-based platform. We do not provide physical
+          shipping or courier services.
+        </p>
+      </div>
+
+      <h3>📦 Delivery Method</h3>
+      <p>
+        All premium safety services and digital deliverables are provided
+        electronically. Upon successful activation, access is granted via:
+      </p>
+      <ul>
+        <li>Direct Email Communication</li>
+        <li>Secure Website Dashboard Access</li>
+        <li>Instant Downloadable Content (QR Tags)</li>
+      </ul>
+
+      <h3>⏱ Fulfillment Timeline</h3>
+      <div class="timeline-grid">
+        <div class="timeline-card">
+          <strong>Activation</strong>
+          <p style="margin: 0; font-size: 13px">
+            Within 24–48 hours of payment confirmation.
+          </p>
+        </div>
+        <div class="timeline-card">
+          <strong>Availability</strong>
+          <p style="margin: 0; font-size: 13px">
+            Worldwide access (No geographic limits).
+          </p>
+        </div>
+      </div>
+
+      <h3>❌ No Physical Logistics</h3>
+      <p>
+        Please note that Lyftag does not offer physical courier delivery,
+        paper-based documentation via post, or Cash-on-Delivery (COD) options.
+        All "tags" are generated and managed digitally for maximum speed and
+        security.
+      </p>
+
+      <div class="footer-contact">
+        <p>Questions about your digital delivery?</p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:lyftag1794@gmail.com">lyftag1794@gmail.com</a><br />
+          <strong>Phone:</strong> +91 95810 26463
+        </p>
+        <a href="/" class="back-btn">← Back to Dashboard</a>
+      </div>
+    </div>
+  </body>
+</html>

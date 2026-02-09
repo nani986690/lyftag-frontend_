@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create an Account | LYF TAG</title>
+
+    <link rel="stylesheet" href="./styles/signup.css" />
+    </script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="left-panel">
+        <div class="form-box">
+          <h2>Create an account</h2>
+          <p class="subtitle">Please enter your details below to get started</p>
+
+          <!-- Referral Badge -->
+          <div class="referral-badge" id="referralBadge">
+            🎉 You're signing up with a referral code! Get special benefits!
+          </div>
+
+          <label>Name</label>
+          <input id="name" type="text" placeholder="Enter your name" />
+
+          <label>Email</label>
+          <input id="email" type="email" placeholder="Enter your email" />
+
+          <label>Password</label>
+          <div class="input-with-icon">
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+            />
+            <span class="eye-icon" onclick="togglePassword('password', this)"
+              >👁</span
+            >
+          </div>
+
+          <label>Confirm Password</label>
+          <div class="input-with-icon">
+            <input
+              id="confirmPassword"
+              type="password"
+              placeholder="Confirm your password"
+            />
+            <span
+              class="eye-icon"
+              onclick="togglePassword('confirmPassword', this)"
+              >👁</span
+            >
+          </div>
+
+          <label>Referral Code (optional)</label>
+          <input
+            id="referralInput"
+            type="text"
+            placeholder="Enter referral code if you have one"
+          />
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="terms" checked />
+            <label for="terms"
+              >I agree to all the <a href="#">Terms & Conditions</a></label
+            >
+          </div>
+
+          <button class="btn" id="signupBtn">
+            Sign up
+          </button>
+
+          <div class="or-divider">Or</div>
+
+          <div class="social-btns">
+            <button class="social-btn" type="button" disabled id="googleBtn">
+              <span style="font-size: 16px">G</span> Google
+            </button>
+            <button
+              class="social-btn"
+              type="button"
+              disabled
+              onclick="alert('Facebook signup coming soon!')"
+            >
+              <span style="font-size: 16px">f</span> Facebook
+            </button>
+          </div>
+
+          <div class="login-link">
+            Already have an account? <a href="login.html">Log in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <h1>Join LYF TAG Today</h1>
+        <p>
+          Welcome to our smart safety ecosystem. Track and manage with ease.
+          Scan. Connect. Save Lives.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function togglePassword(id, icon) {
+        const field = document.getElementById(id);
+        if (field.type === "password") {
+          field.type = "text";
+          icon.textContent = "🙈";
+        } else {
+          field.type = "password";
+          icon.textContent = "👁";
+        }
+      }
+    </script>
+
+    <script src="./script/signup.js" type="module"></script>
+  </body>
+</html>

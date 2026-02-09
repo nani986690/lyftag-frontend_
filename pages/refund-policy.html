@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Refund & Cancellation | Lyftag Elite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        --card-glass: rgba(30, 41, 59, 0.7);
+        --accent-gold: #fbbf24;
+        --text-primary: #f8fafc;
+        --text-dim: #94a3b8;
+        --border: rgba(255, 255, 255, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: var(--bg-gradient);
+        background-attachment: fixed;
+        color: var(--text-primary);
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .policy-container {
+        max-width: 800px;
+        width: 100%;
+        background: var(--card-glass);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 50px;
+        border-radius: 24px;
+        border: 1px solid var(--border);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      h1 {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 30px;
+        background: linear-gradient(to right, #fff, var(--accent-gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-gold);
+        margin: 35px 0 15px 0;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        border-left: 4px solid var(--accent-gold);
+        padding-left: 15px;
+      }
+
+      p {
+        color: var(--text-dim);
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      ul {
+        list-style: none;
+        margin-bottom: 25px;
+      }
+
+      ul li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        color: var(--text-dim);
+      }
+
+      ul li::before {
+        content: "•";
+        position: absolute;
+        left: 10px;
+        color: var(--accent-gold);
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 1;
+      }
+
+      .support-card {
+        background: rgba(15, 23, 42, 0.6);
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      a {
+        color: var(--accent-gold);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      a:hover {
+        color: white;
+        text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+      }
+
+      .footer-nav {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .back-btn {
+        font-size: 14px;
+        color: var(--text-dim);
+        text-decoration: none;
+        padding: 8px 20px;
+        border: 1px solid var(--border);
+        border-radius: 50px;
+        transition: 0.3s;
+      }
+
+      .back-btn:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        border-color: var(--accent-gold);
+      }
+
+      @media (max-width: 600px) {
+        .policy-container {
+          padding: 30px 20px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="policy-container">
+      <h1>Refund & Cancellation Policy</h1>
+
+      <p>
+        We strive to provide an elite experience at <strong>Lyftag</strong>.
+        However, we understand that issues may arise. Our policy is designed to
+        be fair and transparent for all our premium members.
+      </p>
+
+      <h2>Refund Policy</h2>
+      <ul>
+        <li>
+          Refunds are applicable only in the event of
+          <strong>genuine service failures</strong> or technical activation
+          issues.
+        </li>
+        <li>
+          Refund requests must be formally raised within
+          <strong>7 days</strong> of the original payment date.
+        </li>
+        <li>
+          Once approved, refunds are credited back to the original payment
+          source within <strong>5–7 working days</strong>.
+        </li>
+      </ul>
+
+      <h2>Cancellation Policy</h2>
+      <ul>
+        <li>
+          Once a digital service or tag activation process has started, it
+          cannot be cancelled or reversed.
+        </li>
+        <li>
+          All cancellation requests for pending orders must be submitted via our
+          official email channel.
+        </li>
+      </ul>
+
+      <div class="support-card">
+        <h2>Need Assistance?</h2>
+        <p>
+          Our dedicated support team is here to help with your refund or
+          cancellation inquiries.
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:lyftag1794@gmail.com">lyftag1794@gmail.com</a><br />
+          <strong>Phone:</strong> +91 95810 26463
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="/" class="back-btn">← Back to Dashboard</a>
+      </div>
+    </div>
+  </body>
+</html>

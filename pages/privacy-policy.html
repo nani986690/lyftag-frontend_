@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Privacy Policy | Lyftag Elite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-glass: rgba(30, 41, 59, 0.7);
+            --accent-gold: #fbbf24;
+            --text-primary: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .policy-container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #fff, var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 35px 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        strong {
+            color: white;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-dim);
+        }
+
+        ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .contact-box {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 600px) {
+            .policy-container { padding: 30px 20px; }
+            h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="policy-container">
+    <h1>Privacy Policy</h1>
+
+    <p>At <strong>Lyftag</strong>, we respect your privacy and are committed to protecting your personal information. This policy outlines how we handle your data within our elite safety ecosystem.</p>
+
+    <h2>Information We Collect</h2>
+    <ul>
+        <li>Full legal name for identity verification</li>
+        <li>Active Email address for digital tag delivery</li>
+        <li>Emergency contact Phone number</li>
+        <li>Payment details (processed securely via Razorpay)</li>
+        <li>Medical or vehicle information required for our services</li>
+    </ul>
+
+    <h2>How We Use Your Information</h2>
+    <ul>
+        <li>To process premium activations and payments</li>
+        <li>To provide and improve our smart identity services</li>
+        <li>To communicate critical security updates and support</li>
+    </ul>
+
+    <h2>Payment Security</h2>
+    <p>Security is our priority. All payments are securely processed through <strong>Razorpay</strong>. Lyftag does not store your card numbers, UPI PINs, or sensitive banking credentials on our servers.</p>
+
+    <div class="contact-box">
+        <h2>Contact Our Elite Support</h2>
+        <p>
+            <strong>Email:</strong> <a href="mailto:lyftag1794@gmail.com">lyftag1794@gmail.com</a><br />
+            <strong>Phone:</strong> +91 95810 26463
+        </p>
+    </div>
+
+    <a href="../index.html" class="back-link">Return to Home</a>
+</div>
+
+</body>
+</html>

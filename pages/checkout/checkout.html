@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Page - LyfTag</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link rel="stylesheet" href="./styles/checkout.css" />
+  </head>
+  <body>
+    <div class="checkout-container">
+      <div class="checkout-header">
+        <h1>Complete Your Purchase</h1>
+      </div>
+
+      <!-- Plan Details Section -->
+      <div class="plan-section">
+        <h2>Selected Plan</h2>
+        <div id="plan-details" class="plan-details-card">
+          <!-- Plan details will be rendered here by JavaScript -->
+          <p class="loading">Loading plan details...</p>
+        </div>
+      </div>
+
+      <!-- Checkout Button Section -->
+      <div class="checkout-section">
+        <button id="checkout-btn" class="checkout-btn">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="./script/checkout.js"></script>
+  </body>
+</html>

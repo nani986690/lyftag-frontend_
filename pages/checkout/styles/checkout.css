@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #fafafa;
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+.checkout-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.checkout-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.checkout-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -1px;
+}
+
+.plan-section {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 48px;
+  margin-bottom: 24px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.plan-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #666666;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.875rem;
+}
+
+.plan-details-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.plan-details-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  text-transform: none;
+  letter-spacing: -0.5px;
+}
+
+.plan-details-card > p {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: baseline;
+}
+
+.plan-details-card > p::before {
+  content: "₹";
+  font-size: 2rem;
+  margin-right: 4px;
+  color: #666666;
+}
+
+.plan-details-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-details-card ul li {
+  padding: 16px 0;
+  color: #4a4a4a;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.plan-details-card ul li:last-child {
+  border-bottom: none;
+}
+
+.plan-details-card ul li::before {
+  content: "✓";
+  width: 24px;
+  height: 24px;
+  background: #1a1a1a;
+  color: #ffffff;
+  font-weight: 600;
+  margin-right: 16px;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  text-align: center;
+  color: #999999;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Checkout Section */
+.checkout-section {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 48px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 18px 32px;
+  background: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.checkout-btn:hover {
+  background: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.checkout-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 32px 16px;
+  }
+
+  .checkout-header h1 {
+    font-size: 2rem;
+  }
+
+  .plan-section {
+    padding: 32px 24px;
+  }
+
+  .plan-details-card {
+    padding: 28px 20px;
+  }
+
+  .plan-details-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .plan-details-card > p {
+    font-size: 2.5rem;
+  }
+
+  .checkout-section {
+    padding: 24px;
+  }
+}
