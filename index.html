@@ -29,19 +29,52 @@
           aria-expanded="false"
           aria-controls="primary-nav"
         >
-          <span class="bar bar-1"></span>
-          <span class="bar bar-2"></span>
-          <span class="bar bar-3"></span>
+          <svg
+            class="icon-menu"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <svg
+            class="icon-close"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="display: none"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
         </button>
 
         <ul id="primary-nav" class="nav-links" role="menu">
           <li><a href="#home">Home</a></li>
-          <li><a href="./pages/contact-us.html">Contact</a></li>
-          <li><a href="./pages/refund-policy.html">Refund Policy</a></li>
-          <li><a href="./pages/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="./pages/shipping-policy.html">Shipping Policy</a></li>
+          <li><a href="./pages/static/contact-us.html">Contact</a></li>
+          <li><a href="./pages/static/refund-policy.html">Refund Policy</a></li>
           <li>
-            <a href="./pages/terms-and-conditions.html">Terms & Conditions</a>
+            <a href="./pages/static/privacy-policy.html">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="./pages/static/shipping-policy.html">Shipping Policy</a>
+          </li>
+          <li>
+            <a href="./pages/static/terms-and-conditions.html"
+              >Terms & Conditions</a
+            >
           </li>
         </ul>
 
@@ -337,7 +370,7 @@
       </section> -->
 
       <section id="packages" class="packages">
-        <div class="wrap">
+        <div class="container">
           <h1 class="pricing-title">Pricing</h1>
 
           <div class="cards">
@@ -506,7 +539,7 @@
         </div>
       </section>
     </main>
-    
+
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-brand">
@@ -520,10 +553,14 @@
         <div class="footer-section">
           <h4>Support</h4>
           <ul class="footer-links">
-            <li><a href="./pages/contact-us.html">Contact Us</a></li>
-            <li><a href="./pages/shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="./pages/static/contact-us.html">Contact Us</a></li>
             <li>
-              <a href="./pages/refund-policy.html">Refund & Cancellation</a>
+              <a href="./pages/static/shipping-policy.html">Shipping Policy</a>
+            </li>
+            <li>
+              <a href="./pages/static/refund-policy.html"
+                >Refund & Cancellation</a
+              >
             </li>
           </ul>
         </div>
@@ -531,9 +568,13 @@
         <div class="footer-section">
           <h4>Legal</h4>
           <ul class="footer-links">
-            <li><a href="./pages/privacy-policy.html">Privacy Policy</a></li>
             <li>
-              <a href="./pages/terms-and-conditions.html">Terms & Conditions</a>
+              <a href="./pages/static/privacy-policy.html">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="./pages/static/terms-and-conditions.html"
+                >Terms & Conditions</a
+              >
             </li>
           </ul>
         </div>

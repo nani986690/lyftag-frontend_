@@ -1,0 +1,122 @@
+/* ── Shipping Policy Page Styles ── */
+
+/* ── Main Content Area ── */
+.policy-main {
+  padding: 100px 16px 60px;
+  min-height: calc(100vh - 200px);
+}
+
+.page-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ── Page Title ── */
+.page-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #ff512f, #dd2476, #1fa2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.page-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* ── Policy Sections ── */
+.policy-section {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  margin-top: 28px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.policy-section:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.policy-section h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.policy-section p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.policy-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.policy-section li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 8px 0 8px 20px;
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.policy-section li:last-child {
+  border-bottom: none;
+}
+
+.policy-section li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* ── Contact Box ── */
+.contact-box {
+  background: linear-gradient(
+    135deg,
+    rgba(14, 165, 233, 0.06),
+    rgba(124, 58, 237, 0.04)
+  );
+  border-left: 4px solid var(--primary-color);
+}
+
+.contact-box p {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .policy-main {
+    padding: 120px 16px 40px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .policy-section {
+    padding: 24px;
+  }
+}
