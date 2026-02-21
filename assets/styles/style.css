@@ -859,6 +859,30 @@ section {
   font-size: 0.95rem;
 }
 
+.profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1.5px solid var(--accent-color);
+  background: transparent;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.profile-btn svg {
+  flex-shrink: 0;
+}
+
+.profile-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
 .logout-btn {
   background: transparent;
   border: 1px solid var(--secondary-color);
@@ -991,7 +1015,7 @@ section {
   }
 
   /* Sidebar Auth Buttons */
-  .sidebar-auth {
+  .sidebar-auth.active {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -1026,40 +1050,33 @@ section {
   }
 
   /* Sidebar User Profile */
-  .sidebar-profile {
+  .sidebar-profile.active {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 12px;
     margin-top: 24px;
     padding-top: 24px;
     border-top: 1px solid var(--border-color);
   }
 
-  .sidebar-profile .profile-pic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--primary-color);
-  }
-
-  .sidebar-profile .profile-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--text-dark);
+  .sidebar-profile .profile-btn {
+    display: flex;
+    justify-content: center;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-width: 2px;
   }
 
   .sidebar-profile .logout-btn {
-    margin-left: auto;
-    background: transparent;
-    border: 1px solid var(--secondary-color);
-    color: var(--secondary-color);
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-width: 2px;
   }
 
   .sidebar-profile .logout-btn:hover {

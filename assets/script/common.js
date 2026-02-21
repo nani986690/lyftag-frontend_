@@ -27,17 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Clone auth buttons into sidebar
     if (authButtons) {
       const sidebarAuth = document.createElement("div");
-      sidebarAuth.className = "sidebar-auth";
+      sidebarAuth.className = "sidebar-auth active";
       Array.from(authButtons.children).forEach((child) => {
         sidebarAuth.appendChild(child.cloneNode(true));
       });
       navList.appendChild(sidebarAuth);
     }
 
-    // Clone user profile into sidebar (if visible)
-    if (userProfile && userProfile.style.display !== "none") {
+    // Clone user profile into sidebar (always — visibility controlled by index.js)
+    if (userProfile) {
       const sidebarProfile = document.createElement("div");
       sidebarProfile.className = "sidebar-profile";
+      sidebarProfile.id = "sidebar-profile";
       sidebarProfile.innerHTML = userProfile.innerHTML;
       navList.appendChild(sidebarProfile);
     }

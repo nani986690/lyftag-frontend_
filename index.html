@@ -84,9 +84,23 @@
         </div>
 
         <div id="user-profile" class="user-profile" style="display: none">
-          <img id="profile-pic" class="profile-pic" src="" alt="Profile" />
-          <span id="profile-name"></span>
-          <button onclick="logout()" class="logout-btn">Logout</button>
+          <a href="./pages/profile/profile.html" class="profile-btn">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            Profile
+          </a>
+          <button id="logout-btn" class="logout-btn">Logout</button>
         </div>
       </div>
     </nav>
@@ -586,176 +600,6 @@
       </div>
     </footer>
     <script type="module" src="./assets/script/common.js"></script>
-
-    <!-- Firebase v8 CDN -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-
-    <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyC68lKJmmOSJVkLWW5VvcYHY1PoLJ0qX-w",
-        authDomain: "lyftag-4b64b.firebaseapp.com",
-        projectId: "lyftag-4b64b",
-        storageBucket: "lyftag-4b64b.appspot.com",
-        messagingSenderId: "565411634580",
-        appId: "1:565411634580:web:83fb40b81582b766ae4381",
-        measurementId: "G-0F1RY2EDVL",
-      };
-
-      firebase.initializeApp(firebaseConfig);
-      const auth = firebase.auth();
-      const db = firebase.firestore();
-    </script>
-
-    <!-- ⭐ AUTH STATE LISTENER -->
-    <script>
-      // Updated auth state listener with referral section
-      auth.onAuthStateChanged(async (user) => {
-        const profileSection = document.getElementById("user-profile");
-        const authButtons = document.getElementById("auth-buttons");
-        const referralLoggedOut = document.getElementById(
-          "referral-logged-out",
-        );
-        const referralLoggedIn = document.getElementById("referral-logged-in");
-
-        if (user) {
-          // Hide login / sign up buttons
-          authButtons.style.display = "none";
-
-          // Show profile section
-          profileSection.style.display = "flex";
-
-          // Set profile details
-          document.getElementById("profile-pic").src =
-            user.photoURL || "https://i.imgur.com/4ZQZ4sC.png";
-
-          document.getElementById("profile-name").textContent =
-            user.displayName || "User";
-
-          // Show logged-in referral section
-          if (referralLoggedOut) referralLoggedOut.style.display = "none";
-          if (referralLoggedIn) referralLoggedIn.style.display = "block";
-
-          // Load referral data
-          await loadReferralDataForIndex(user);
-        } else {
-          // When logged out → show Login / Sign Up buttons
-          authButtons.style.display = "flex";
-
-          // Hide profile section
-          profileSection.style.display = "none";
-
-          // Show logged-out referral section
-          if (referralLoggedOut) referralLoggedOut.style.display = "block";
-          if (referralLoggedIn) referralLoggedIn.style.display = "none";
-        }
-      });
-
-      function logout() {
-        auth.signOut().then(() => {
-          window.location.href = "./pages/auth/login.html";
-        });
-      }
-
-      // Load referral data for the index page
-      async function loadReferralDataForIndex(user) {
-        try {
-          const userDoc = await db.collection("users").doc(user.uid).get();
-
-          if (userDoc.exists) {
-            const userData = userDoc.data();
-
-            // Generate referral link
-            const referralCode = userData.referralCode;
-            if (referralCode) {
-              const referralLink = `${window.location.origin}/pages/auth/signup.html?ref=${referralCode}`;
-              const linkElement = document.getElementById("userReferralLink");
-              if (linkElement) linkElement.value = referralLink;
-            }
-
-            // Update quick stats
-            const earningsElement = document.getElementById("quickEarnings");
-            const referralsElement = document.getElementById("quickReferrals");
-            if (earningsElement)
-              earningsElement.textContent = userData.totalEarnings || 0;
-            if (referralsElement)
-              referralsElement.textContent = userData.totalReferrals || 0;
-          } else {
-            // User document doesn't exist - create it
-            const newReferralCode = generateReferralCode();
-            await db.collection("users").doc(user.uid).set({
-              email: user.email,
-              displayName: user.displayName,
-              referralCode: newReferralCode,
-              totalEarnings: 0,
-              totalReferrals: 0,
-              createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-            });
-
-            // Reload the data
-            await loadReferralDataForIndex(user);
-          }
-        } catch (error) {
-          console.error("Error loading referral data:", error);
-        }
-      }
-
-      // Generate referral code
-      function generateReferralCode() {
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        let code = "";
-        for (let i = 0; i < 8; i++) {
-          code += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return code;
-      }
-
-      // Copy referral link from index page
-      function copyReferralLinkFromIndex() {
-        const input = document.getElementById("userReferralLink");
-        if (!input) return;
-
-        input.select();
-        input.setSelectionRange(0, 99999);
-
-        try {
-          document.execCommand("copy");
-          showToastNotification("Referral link copied! 🎉");
-        } catch (err) {
-          navigator.clipboard
-            .writeText(input.value)
-            .then(() => {
-              showToastNotification("Referral link copied! 🎉");
-            })
-            .catch(() => {
-              alert("Failed to copy link");
-            });
-        }
-      }
-
-      // Simple toast notification
-      function showToastNotification(message) {
-        const toast = document.createElement("div");
-        toast.style.cssText = `
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            z-index: 10000;
-            font-weight: 600;
-            border-left: 4px solid #48bb78;
-        `;
-        toast.textContent = message;
-        document.body.appendChild(toast);
-
-        setTimeout(() => {
-          toast.remove();
-        }, 3000);
-      }
-    </script>
+    <script type="module" src="./assets/script/index.js"></script>
   </body>
 </html>
