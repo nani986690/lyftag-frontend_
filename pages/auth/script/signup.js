@@ -36,7 +36,6 @@ const handleEmailSignup = async () => {
     });
 
     const IdToken = await auth.currentUser.getIdToken(true);
-    console.log("token", IdToken)
     const referralCode = formData.referralCode;
 
     await syncUserWithBackend(IdToken, referralCode);

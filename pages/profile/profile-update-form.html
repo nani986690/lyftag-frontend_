@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Details | LYF TAG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/profile-update-form.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Left Panel — Form -->
+      <div class="left-panel">
+        <div class="form-box">
+          <a href="./profile.html" class="back-link">← Back to Profile</a>
+          <h2>Update Details</h2>
+          <p class="subtitle">Keep your profile information up to date</p>
+
+          <form id="updateForm">
+            <label for="name">Full Name</label>
+            <input id="name" type="text" placeholder="Enter your full name" />
+
+            <label for="phone">Phone Number</label>
+            <input
+              id="phone"
+              type="tel"
+              placeholder="Enter your phone number"
+            />
+
+            <label for="bloodGroup">Blood Group</label>
+            <select id="bloodGroup">
+              <option value="" disabled selected>
+                Select your blood group
+              </option>
+              <option value="A+">A+</option>
+              <option value="A-">A−</option>
+              <option value="B+">B+</option>
+              <option value="B-">B−</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB−</option>
+              <option value="O+">O+</option>
+              <option value="O-">O−</option>
+            </select>
+
+            <label for="vehicleReg">Vehicle Registration No.</label>
+            <input
+              id="vehicleReg"
+              type="text"
+              placeholder="e.g. AP 09 AB 1234"
+            />
+
+            <button type="submit" class="btn">Save Changes</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right Panel — Branding -->
+      <div class="right-panel">
+        <h1>Your Safety Profile</h1>
+        <p>
+          Keep your emergency details updated so first responders can help you
+          faster. Scan. Connect. Save Lives.
+        </p>
+      </div>
+    </div>
+
+    <script src="./script/profile-update-form.entry.js" type="module"></script>
+  </body>
+</html>

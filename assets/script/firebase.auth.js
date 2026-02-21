@@ -17,14 +17,25 @@ const auth = getAuth();
 const db = getFirestore();
 
 let currentUser = null;
+let authReady = null;
 
-auth.onAuthStateChanged((user) => {
-  if (user) {
-    currentUser = user;
-  } else {
-    currentUser = null;
+const waitForAuth = () => {
+  if (!authReady) {
+    authReady = new Promise((resolve) => {
+      const unsubscribe = auth.onAuthStateChanged((user) => {
+        console.log("AUTH STATE CHANGED", user);
+        currentUser = user || null;
+        console.log("CURRENT USER", currentUser);
+        unsubscribe();
+        resolve(user);
+      });
+    });
   }
-});
+  return authReady;
+};
+
+// Kick off auth listener immediately
+waitForAuth();
 
 const getCurrentUser = () => currentUser;
 
@@ -36,4 +47,11 @@ const getCurrentUserIdToken = async () => {
   return await user.getIdToken();
 };
 
-export { auth, db, firebaseConfig, getCurrentUser, getCurrentUserIdToken };
+export {
+  auth,
+  db,
+  firebaseConfig,
+  getCurrentUser,
+  getCurrentUserIdToken,
+  waitForAuth,
+};
