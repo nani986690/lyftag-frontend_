@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   const sidebarAuth = document.querySelector(".sidebar-auth");
   const sidebarProfile = document.getElementById("sidebar-profile");
 
+  // Logout handler — use delegation so both desktop + sidebar clones work
+  document.addEventListener("click", async (e) => {
+    if (e.target.closest(".logout-btn")) {
+      e.preventDefault();
+      await signOut(auth);
+      window.location.reload();
+    }
+  });
+
   const user = await waitForAuth();
 
   if (user) {
@@ -39,13 +48,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Show logged-out referral section
     if (referralLoggedOut) referralLoggedOut.style.display = "block";
     if (referralLoggedIn) referralLoggedIn.style.display = "none";
-  }
-
-  // Logout handler
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", async () => {
-      await signOut(auth);
-      window.location.reload();
-    });
   }
 });

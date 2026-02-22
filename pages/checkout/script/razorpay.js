@@ -4,7 +4,7 @@ const RAZORPAY_KEY_ID = "rzp_test_S1HTg3qd801pNt";
 
 const razorpayCheckout = async ({ planId }) => {
   try {
-    const createPaymentResponse = await createPayment({ planId });
+    const createPaymentResponse = await createPayment({ plan: planId });
 
     if (!createPaymentResponse.success) {
       alert("Failed to create payment");

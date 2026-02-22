@@ -1,14 +1,14 @@
 import apiClient from "../../../assets/script/apiClient.js";
 import { auth } from "../../../assets/script/firebase.auth.js";
 
-const createPayment = async ({ planId }) => {
+const createPayment = async ({ plan }) => {
   const token = await auth.currentUser.getIdToken();
   const response = await apiClient("/payments/create-order", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
-      planId,
+      plan,
     }),
   });
 
