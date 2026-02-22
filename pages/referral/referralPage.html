@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refer & Earn | LYF TAG</title>
+    <meta
+      name="description"
+      content="Refer friends to LYF TAG and earn ₹50 for every successful referral. Share your unique link today!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./referralPage.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- Header -->
+      <header class="page-header">
+        <a href="../../index.html" class="back-link">← Back to Home</a>
+        <h1 class="page-title">Refer & Earn</h1>
+        <p class="page-subtitle">
+          Invite friends and earn
+          <span class="highlight-text">₹50</span> for every successful referral!
+        </p>
+      </header>
+
+      <!-- Main Grid -->
+      <div class="main-grid">
+        <!-- Earnings Card -->
+        <div class="card earnings-card">
+          <h2>💵 Your Earnings</h2>
+          <div class="earnings-amount">₹<span id="totalEarnings">0</span></div>
+          <div class="earnings-label">Total Earnings</div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-number" id="totalReferrals">0</div>
+              <div class="stat-label">Total Referrals</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number" id="pendingReferrals">0</div>
+              <div class="stat-label">Pending</div>
+            </div>
+          </div>
+
+          <button class="btn btn-withdraw" id="withdrawBtn">
+            💳 Request Withdrawal
+          </button>
+        </div>
+
+        <!-- Referral Link Card -->
+        <div class="card">
+          <h2>🔗 Your Referral Link</h2>
+          <div class="referral-link-box">
+            <input
+              type="text"
+              class="referral-input"
+              id="referralLink"
+              readonly
+              placeholder="Loading your link..."
+            />
+            <button class="btn btn-primary" id="copyBtn">📋 Copy</button>
+          </div>
+
+          <div class="share-buttons">
+            <button class="share-btn share-whatsapp" id="shareWhatsApp">
+              📱 WhatsApp
+            </button>
+            <button class="share-btn share-telegram" id="shareTelegram">
+              ✈️ Telegram
+            </button>
+            <button class="share-btn share-email" id="shareEmail">
+              📧 Email
+            </button>
+            <button class="share-btn share-twitter" id="shareTwitter">
+              🐦 Twitter
+            </button>
+          </div>
+
+          <div class="info-box">
+            <p>
+              <strong>How it works:</strong> Share your unique referral link
+              with friends. When they sign up and make their first purchase, you
+              earn ₹50 instantly!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Referral History -->
+      <div class="card history-card">
+        <h2>📊 Referral History</h2>
+        <div class="referral-list" id="referralList">
+          <div class="empty-state">
+            <div class="empty-state-icon">🎯</div>
+            <p>No referrals yet. Start sharing your link!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- How It Works -->
+      <div class="card how-it-works-card">
+        <h2>How It Works</h2>
+        <div class="steps-grid">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <h3>Share Your Link</h3>
+            <p>
+              Copy your unique referral link and share it with friends via
+              WhatsApp, Email, or Social Media
+            </p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <h3>Friend Signs Up</h3>
+            <p>
+              Your friend clicks your link, signs up, and makes their first
+              purchase on LYF TAG
+            </p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <h3>You Both Earn</h3>
+            <p>
+              You earn ₹50 instantly, and your friend gets a special discount on
+              their first order!
+            </p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <h3>Withdraw Money</h3>
+            <p>
+              Accumulated earnings can be withdrawn to your bank account or UPI
+              once you reach ₹500
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+      <div class="toast-icon" id="toastIcon"></div>
+      <div class="toast-message" id="toastMessage"></div>
+    </div>
+
+    <script type="module" src="./referralPage.js"></script>
+  </body>
+</html>

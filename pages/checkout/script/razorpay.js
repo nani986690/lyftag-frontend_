@@ -32,6 +32,7 @@ const razorpayCheckout = async ({ planId }) => {
 
         if (verifyResponse.success) {
           alert("Payment successful");
+          window.location.href = "../../../index.html";
         } else {
           alert("Payment failed");
         }
