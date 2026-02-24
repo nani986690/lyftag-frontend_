@@ -9,7 +9,7 @@ const postDetails = async ({
 }) => {
   const token = await auth.currentUser.getIdToken();
   try {
-    const response = await apiClient("/user/details", {
+    const response = await apiClient("/vehicle-details/add", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -31,7 +31,7 @@ const getDetails = async () => {
   const token = await auth.currentUser.getIdToken();
 
   try {
-    const response = await apiClient("/user/details", {
+    const response = await apiClient("/vehicle-details/get", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -47,7 +47,7 @@ const getDetails = async () => {
 const updateDetails = async (updates) => {
   const token = await auth.currentUser.getIdToken();
   try {
-    const response = await apiClient(`/user/details`, {
+    const response = await apiClient(`/vehicle-details/update`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,

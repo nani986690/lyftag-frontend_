@@ -5,6 +5,7 @@ const apiClient = async (endPoint, options = {}) => {
   try {
     const defaultHeaders = {
       "Content-Type": "application/json",
+      "ngrok-skip-browser-warning": "true",
     };
 
     const configs = {

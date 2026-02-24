@@ -20,13 +20,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       const data = await getDetails();
 
-      if (data.userProfile) {
-        profileName.textContent = data.userProfile.ownerName || "";
-        fullName.textContent = data.userProfile.ownerName || "";
-        phoneNum.textContent = data.userProfile.ownerPhoneNumber || "";
-        bloodGroup.textContent = data.userProfile.bloodGroup || "";
-        vehicleNumber.textContent =
-          data.userProfile.vehicleRegistrationNumber || "";
+      if (data) {
+        profileName.textContent = data.ownerName || "";
+        fullName.textContent = data.ownerName || "";
+        phoneNum.textContent = data.ownerPhoneNumber || "";
+        bloodGroup.textContent = data.bloodGroup || "";
+        vehicleNumber.textContent = data.vehicleRegistrationNumber || "";
       }
     } catch (error) {
       console.error("Could not fetch existing details:", error);
