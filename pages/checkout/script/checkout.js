@@ -1,7 +1,8 @@
 // ENTRY POINT FOR CHECKOUT PAGE
 import { getCurrentUser } from "../../../assets/script/firebase.auth.js";
 import { PLAN_DETAILS } from "../../../assets/script/data.js";
-import razorpayCheckout from "./razorpay.js";
+// import razorpayCheckout from "./razorpay.js";
+import initCashfree from "./cashfree.js";
 
 const getParams = () => {
   const params = new URLSearchParams(window.location.search);
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "../login.html";
       return;
     }
-    razorpayCheckout({ planId: PLAN_DETAILS[plan].planId });
+    // razorpayCheckout({ planId: PLAN_DETAILS[plan].planId });
+    initCashfree(PLAN_DETAILS[plan].planId);
   });
 });
