@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       validateLoginForm(formData);
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
       alert("Login successful");
-      window.location.href = "/";
+      window.location.href = "../../../index.html";
     } catch (error) {
       alert(error.message);
     }

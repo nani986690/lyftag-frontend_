@@ -41,7 +41,7 @@ const handleEmailSignup = async () => {
     await syncUserWithBackend(IdToken, referralCode);
 
     alert("Signup successful");
-    window.location.href = "/";
+    window.location.href = "../../../index.html";
   } catch (error) {
     alert(error.message);
   }

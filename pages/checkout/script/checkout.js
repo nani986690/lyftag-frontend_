@@ -42,6 +42,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     // razorpayCheckout({ planId: PLAN_DETAILS[plan].planId });
     await initCashfree(PLAN_DETAILS[plan].planId);
-    window.location.href = "../../index.html";
+    window.location.href = "../../../index.html";
   });
 });
