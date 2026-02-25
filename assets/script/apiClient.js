@@ -1,5 +1,6 @@
 // const BASE_URL = "http://localhost:3000";
-const BASE_URL = "https://annette-nondesignate-cryptically.ngrok-free.dev";
+// const BASE_URL = "https://annette-nondesignate-cryptically.ngrok-free.dev";
+const BASE_URL = "https://lyftag-backend-production.up.railway.app";
 
 const apiClient = async (endPoint, options = {}) => {
   try {

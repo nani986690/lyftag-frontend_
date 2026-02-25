@@ -28,7 +28,7 @@ const renderPlanDetails = (plan) => {
   `;
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const plan = getParams();
   renderPlanDetails(plan);
   const checkoutBtn = document.getElementById("checkout-btn");
@@ -37,10 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentUser = getCurrentUser();
     if (!currentUser) {
       alert("Please login to continue");
-      window.location.href = "../login.html";
+      window.location.href = "../../auth/login.html";
       return;
     }
     // razorpayCheckout({ planId: PLAN_DETAILS[plan].planId });
-    initCashfree(PLAN_DETAILS[plan].planId);
+    await initCashfree(PLAN_DETAILS[plan].planId);
+    window.location.href = "../../index.html";
   });
 });
