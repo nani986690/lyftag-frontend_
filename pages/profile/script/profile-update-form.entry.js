@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const user = await waitForAuth();
   if (!user) {
-    return (window.location.href = "../../index.html");
+    return (window.location.href = "../../../index.html");
   }
 
   const populateData = async () => {
@@ -20,13 +20,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
       const data = await getDetails();
-
-      if (data.userProfile) {
+      if (data) {
         currentMethod = "PATCH";
-        name.value = data.userProfile.ownerName || "";
-        phone.value = data.userProfile.ownerPhoneNumber || "";
-        bloodGroup.value = data.userProfile.bloodGroup || "";
-        vehicleReg.value = data.userProfile.vehicleRegistrationNumber || "";
+        name.value = data.ownerName || "";
+        phone.value = data.ownerPhoneNumber || "";
+        bloodGroup.value = data.bloodGroup || "";
+        vehicleReg.value = data.vehicleRegistrationNumber || "";
       }
     } catch (error) {
       console.error("Could not fetch existing details:", error);
@@ -47,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       vehicleRegistrationNumber: vehicleReg.value,
     };
 
-    console.log(currentMethod, "is method")
+    console.log(currentMethod, "is method");
     if (currentMethod === "POST") {
       await postDetails(payload);
     } else {

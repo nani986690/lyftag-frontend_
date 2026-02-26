@@ -16,6 +16,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     return (window.location.href = "../../index.html");
   }
 
+  const generateQRCode = (qrId) => {
+    const qrContainer = document.getElementById("qrcode");
+    if (qrContainer && qrId) {
+      qrContainer.innerHTML = ""; // Clear existing
+      new QRCode(qrContainer, {
+        text: `${window.location.origin}/pages/qr/qr.html?qrId=${qrId}`,
+        width: 128,
+        height: 128,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H,
+      });
+    }
+  };
+
   const populateData = async () => {
     try {
       const data = await getDetails();
@@ -26,6 +41,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         phoneNum.textContent = data.ownerPhoneNumber || "";
         bloodGroup.textContent = data.bloodGroup || "";
         vehicleNumber.textContent = data.vehicleRegistrationNumber || "";
+
+        if (data.qrId) {
+          generateQRCode(data.qrId);
+        }
       }
     } catch (error) {
       console.error("Could not fetch existing details:", error);

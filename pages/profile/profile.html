@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="../../assets/styles/style.css" />
     <link rel="stylesheet" href="./styles/profile.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   </head>
 
   <body>
@@ -45,6 +46,8 @@
             <h1 class="profile-name" id="profileName"></h1>
             <p class="profile-tagline">LYF TAG Member</p>
           </div>
+
+          <div id="qrcode"></div>
 
           <!-- Profile Cards Grid -->
           <div class="cards-grid">
@@ -132,7 +135,9 @@
                 </svg>
               </div>
               <span class="detail-label">Vehicle Registration No.</span>
-              <span class="detail-value" id="vehicleNumber">No Vehicle Number</span>
+              <span class="detail-value" id="vehicleNumber"
+                >No Vehicle Number</span
+              >
             </div>
           </div>
 
@@ -141,6 +146,21 @@
             <a class="btn btn-update" href="./profile-update-form.html"
               >Update Details</a
             >
+            <!-- <a
+              class="btn btn-secondary"
+              style="
+                margin-top: 12px;
+                display: inline-block;
+                width: fit-content;
+                padding: 10px 24px;
+                font-size: 0.9rem;
+                text-decoration: none;
+                text-align: center;
+                border: 2px solid var(--primary-color);
+              "
+              href="../protected-documents/index.html"
+              >View Documents</a
+            > -->
           </div>
 
           <!-- Logout -->
