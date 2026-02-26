@@ -16,16 +16,12 @@
   </head>
 
   <body>
-    <nav class="navbar" aria-label="Primary">
-      <div class="container nav-content">
-        <a class="logo" href="../../index.html">LYF TAG</a>
-        <a href="../../index.html" class="back-link">← Back to Home</a>
-      </div>
-    </nav>
-
     <main>
       <section class="profile-section">
         <div class="container">
+          <a href="../../index.html" class="back-link-prominent"
+            >← Back to Home</a
+          >
           <!-- Profile Header -->
           <div class="profile-header">
             <div class="profile-avatar">
@@ -47,7 +43,28 @@
             <p class="profile-tagline">LYF TAG Member</p>
           </div>
 
-          <div id="qrcode"></div>
+          <!-- QR Code Section -->
+          <div class="qr-card">
+            <div id="qrcode"></div>
+            <p class="qr-info">Digital ID for Emergencies</p>
+            <button id="downloadBtn" class="btn-download">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download QR
+            </button>
+          </div>
 
           <!-- Profile Cards Grid -->
           <div class="cards-grid">

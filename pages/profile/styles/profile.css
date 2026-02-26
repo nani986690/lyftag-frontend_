@@ -12,9 +12,27 @@
   color: var(--accent-color);
 }
 
+.back-link-prominent {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: calc(var(--spacing-unit) * 4);
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.back-link-prominent:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateX(-4px);
+}
+
 /* ── Section ── */
 .profile-section {
-  padding: calc(var(--spacing-unit) * 16) 0 calc(var(--spacing-unit) * 10);
+  padding: calc(var(--spacing-unit) * 6) 0 calc(var(--spacing-unit) * 10);
   min-height: 100vh;
   background: linear-gradient(
     135deg,
@@ -51,6 +69,66 @@
   font-size: 0.95rem;
   color: var(--text-muted);
   font-weight: 500;
+}
+
+/* ── QR Code Section ── */
+.qr-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: calc(var(--spacing-unit) * 4);
+  max-width: fit-content;
+  margin: 0 auto calc(var(--spacing-unit) * 5);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--spacing-unit) * 2);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.qr-card:hover {
+  transform: scale(1.02);
+}
+
+#qrcode {
+  padding: 10px;
+  background: white;
+  border-radius: 12px;
+}
+
+#qrcode img {
+  display: block;
+}
+
+.qr-info {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1.5px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 4px;
+}
+
+.btn-download:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* ── Shared Detail Styles ── */

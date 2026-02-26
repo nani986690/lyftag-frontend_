@@ -862,8 +862,9 @@ section {
 .profile-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 18px;
+  gap: 8px;
+  padding: 0 20px;
+  height: 38px;
   border-radius: 8px;
   border: 1.5px solid var(--accent-color);
   background: transparent;
@@ -872,6 +873,8 @@ section {
   font-size: 0.9rem;
   text-decoration: none;
   transition: all 0.3s ease;
+  line-height: 1;
+  box-sizing: border-box;
 }
 
 .profile-btn svg {
@@ -884,15 +887,22 @@ section {
 }
 
 .logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
-  border: 1px solid var(--secondary-color);
+  border: 1.5px solid var(--secondary-color);
   color: var(--secondary-color);
-  padding: 6px 16px;
-  border-radius: 6px;
+  padding: 0 20px;
+  height: 38px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
   font-size: 0.9rem;
+  line-height: 1;
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
 /* Hide sidebar-only elements on desktop */

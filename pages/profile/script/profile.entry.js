@@ -57,4 +57,29 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   populateData();
+
+  const downloadBtn = document.getElementById("downloadBtn");
+  downloadBtn.addEventListener("click", () => {
+    const qrContainer = document.getElementById("qrcode");
+    const img = qrContainer.querySelector("img");
+    const canvas = qrContainer.querySelector("canvas");
+
+    if (img && img.src) {
+      const link = document.createElement("a");
+      link.href = img.src;
+      link.download = `lyftag-qr-${user.uid}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else if (canvas) {
+      const link = document.createElement("a");
+      link.href = canvas.toDataURL("image/png");
+      link.download = `lyftag-qr-${user.uid}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      alert("QR code not ready for download. Please try again.");
+    }
+  });
 });
